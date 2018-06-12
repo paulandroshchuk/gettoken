@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+$router->view('/', 'index.index');
+
+$router->namespace('Home')->group(function ($router) {
+    $router->middleware('auth')->group(function ($router) {
+        $router->get('/home', 'IndexController@index')->name('home');
+    });
 });
