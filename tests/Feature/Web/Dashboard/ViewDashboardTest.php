@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Web\Dashboard;
 
-use App\Models\User;
 use Tests\Feature\Garage\WebTestCase;
 
 class ViewDashboardTest extends WebTestCase
@@ -19,7 +18,7 @@ class ViewDashboardTest extends WebTestCase
     /** @test */
     function user_sees_the_dashboard_page()
     {
-        $this->actingAs(factory(User::class)->create());
+        $this->actingAs($this->createUser());
 
         $this->get(route('dashboard.index'))
             ->assertSuccessful()

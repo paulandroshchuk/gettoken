@@ -8,5 +8,5 @@ use Illuminate\Foundation\Testing\WithFaker;
 
 class WebTestCase extends TestCase
 {
-    use WithFaker, DatabaseTransactions;
+    use WithFaker, ModelFactories, DatabaseTransactions;
 }
