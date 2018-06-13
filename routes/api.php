@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+$router->namespace('Organizations')->group(function ($router) {
+    $router->middleware('auth:api')->group(function ($router) {
+        $router->get('/organizations', 'OrganizationsController@index');
+        $router->post('/organizations', 'OrganizationsController@store');
+    });
 });
