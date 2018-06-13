@@ -13,10 +13,10 @@
 
 Auth::routes();
 
-$router->view('/', 'index.index');
+$router->view('/welcome', 'index.index');
 
-$router->namespace('Home')->group(function ($router) {
+$router->namespace('Dashboard')->group(function ($router) {
     $router->middleware('auth')->group(function ($router) {
-        $router->get('/home', 'IndexController@index')->name('home');
+        $router->get('/', 'DashboardController@index')->name('dashboard.index');
     });
 });
