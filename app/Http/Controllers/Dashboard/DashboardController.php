@@ -27,6 +27,8 @@ class DashboardController extends Controller
      */
     public function index(): View
     {
-        return view('dashboard.index');
+        return view('dashboard.index', [
+            'projects' => $this->guard->user()->getAttribute('projects'),
+        ]);
     }
 }
