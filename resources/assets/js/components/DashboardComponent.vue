@@ -3,7 +3,7 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-header">
-                    Projects
+                    Menu
                     <!--<a href="#" class="badge badge-success">New project</a>-->
                 </div>
                 <ul class="list-group list-group-flush token-navigation-menu">

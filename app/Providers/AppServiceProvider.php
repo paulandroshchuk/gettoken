@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('dashboard.index', function ($view) {
+            $view->with('active', 'dashboard');
+        });
     }
 
     /**

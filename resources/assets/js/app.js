@@ -18,9 +18,6 @@ window.Vue = require('vue');
 // Dashboard
 Vue.component('dashboard-component', require('./components/DashboardComponent.vue'));
 
-// Projects
-Vue.component('create-project', require('./components/projects/CreateProject.vue'));
-
 const app = new Vue({
     el: '#app'
 });

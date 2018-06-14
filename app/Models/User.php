@@ -29,20 +29,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get a list of all user organisations.
-     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function organizations()
-    {
-        return $this->hasMany(Organization::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function projects()
     {
-        return $this->belongsToMany(Project::class, 'project_user');
+        return $this->hasMany(Project::class);
     }
 }
