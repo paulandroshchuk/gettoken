@@ -16,6 +16,22 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('dashboard.index', function ($view) {
             $view->with('active', 'dashboard');
         });
+
+        view()->composer('billing.index', function ($view) {
+            $view->with('active', 'billing');
+        });
+
+        view()->composer('webhooks.index', function ($view) {
+            $view->with('active', 'webhooks');
+        });
+
+        view()->composer('api.index', function ($view) {
+            $view->with('active', 'api');
+        });
+
+        view()->composer('settings.index', function ($view) {
+            $view->with('active', 'settings');
+        });
     }
 
     /**
