@@ -12,10 +12,3 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-$router->namespace('Organizations')->group(function ($router) {
-    $router->middleware('auth:api')->group(function ($router) {
-        $router->get('/organizations', 'OrganizationsController@index');
-        $router->post('/organizations', 'OrganizationsController@store');
-    });
-});
