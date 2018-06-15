@@ -15,13 +15,13 @@
            href="{{ route('webhooks.index') }}">
             Webhooks
         </a>
-        <a class="list-group-item {{ isset($active) && $active === 'billing' ? 'active' : '' }}"
-           href="{{ route('billing.index') }}">
-            Billing
-        </a>
         <a class="list-group-item {{ isset($active) && $active === 'api' ? 'active' : '' }}"
            href="{{ route('api.index') }}">
             API
+        </a>
+        <a class="list-group-item {{ isset($active) && $active === 'billing' ? 'active' : '' }}"
+           href="{{ route('billing.index') }}">
+            Billing
         </a>
         <a class="list-group-item {{ isset($active) && $active === 'settings' ? 'active' : '' }}"
            href="{{ route('settings.index') }}">
