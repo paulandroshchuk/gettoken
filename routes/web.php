@@ -22,6 +22,9 @@ $router->middleware('auth')->group(function ($router) {
     // Billing
     $router->get('/billing', 'Billing\BillingController@index')->name('billing.index');
 
+    // Integrations
+    $router->get('/integrations', 'Integrations\IntegrationsController@index')->name('integrations.index');
+
     // Webhooks
     $router->get('/webhooks', 'Webhooks\WebhooksController@index')->name('webhooks.index');
 

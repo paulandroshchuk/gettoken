@@ -7,6 +7,10 @@
            href="{{ route('dashboard.index') }}">
             Dashboard
         </a>
+        <a class="list-group-item {{ isset($active) && $active === 'integrations' ? 'active' : '' }}"
+           href="{{ route('integrations.index') }}">
+            Integrations
+        </a>
         <a class="list-group-item {{ isset($active) && $active === 'webhooks' ? 'active' : '' }}"
            href="{{ route('webhooks.index') }}">
             Webhooks
