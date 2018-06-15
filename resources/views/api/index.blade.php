@@ -13,25 +13,18 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="alert alert-dark" role="alert">
-                                    Your project throttle limit is 300r/60s <a href="#" class="alert-link">Learn More</a>
+                                    <i class="far fa-lightbulb"></i>
+                                    Your rate limit is {{ $user->rate_limit }} requests/minute.
+                                    <a href="javascript:void(0)" class="alert-link">Learn more</a>.
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">Public API Key</h5>
+                                        <h5 class="card-title">API Key</h5>
                                         <hr>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-outline-dark">Regenerate</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Private API Key</h5>
-                                        <hr>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <p class="card-text">
+                                            Authentication is handled by using API keys.
+                                            <br> You can find documentation of usage <a href="javascript:void(0)">here</a>.
+                                        </p>
                                         <a href="#" class="btn btn-outline-dark">Regenerate</a>
                                     </div>
                                 </div>
