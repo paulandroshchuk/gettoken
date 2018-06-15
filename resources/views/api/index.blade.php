@@ -19,13 +19,22 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <h5 class="card-title">API Key</h5>
+                                        <h5 class="card-title">API Token</h5>
                                         <hr>
                                         <p class="card-text">
-                                            Authentication is handled by using API keys.
+                                            Authentication is handled by using API tokens.
                                             <br> You can find documentation of usage <a href="javascript:void(0)">here</a>.
                                         </p>
-                                        <a href="#" class="btn btn-outline-dark">Regenerate</a>
+                                        <div class="form-group">
+                                            <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                Show API token
+                                            </button>
+                                        </div>
+                                        <div class="collapse" id="collapseExample">
+                                            <div class="card card-body">
+                                                <span>{{ $user->api_token }}</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
