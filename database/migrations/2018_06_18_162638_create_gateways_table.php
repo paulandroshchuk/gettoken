@@ -15,11 +15,17 @@ class CreateGatewaysTable extends Migration
     {
         Schema::create('gateways', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('project_id');
             $table->enum('type', ['sms', 'email', 'telegram']);
             $table->string('address');
             $table->timestamps();
 
-            $table->unique(['type', 'address']);
+            $table->foreign('project_id')
+                ->references('id')
+                ->on('projects')
+                ->onDelete('CASCADE');
+
+            $table->unique(['project_id', 'type', 'address']);
         });
     }
 

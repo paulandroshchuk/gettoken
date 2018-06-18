@@ -19,8 +19,8 @@ class CreateInteractionsTable extends Migration
             $table->unsignedInteger('recipient_id');
             $table->unsignedInteger('gateway_id');
             $table->string('code');
-            $table->enum('status', ['QUEUED', 'SENT', 'FAILED']);
-            $table->string('gateway_feedback');
+            $table->enum('status', ['QUEUED', 'SENT', 'FAILED'])->default('QUEUED');
+            $table->string('gateway_feedback')->nullable();
             $table->timestamps();
 
             $table->foreign('project_id')
