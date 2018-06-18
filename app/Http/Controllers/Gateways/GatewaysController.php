@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Integrations;
+namespace App\Http\Controllers\Gateways;
 
 use App\Http\Controllers\Controller;
 
-class IntegrationsController extends Controller
+class GatewaysController extends Controller
 {
     /**
      * Show the integrations page.
@@ -13,6 +13,6 @@ class IntegrationsController extends Controller
      */
     public function index()
     {
-        return view('integrations.index');
+        return view('gateways.index');
     }
 }
