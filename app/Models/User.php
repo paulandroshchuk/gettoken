@@ -4,11 +4,17 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
@@ -29,6 +35,8 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get a collection of user projects.
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function projects()
