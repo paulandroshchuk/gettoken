@@ -35,12 +35,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get a collection of user projects.
+     * Get User's project.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function projects()
+    public function project()
     {
-        return $this->hasMany(Project::class);
+        return $this->belongsTo(Project::class);
     }
 }
