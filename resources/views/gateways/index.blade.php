@@ -28,11 +28,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title d-flex justify-content-between align-items-center">
-                                            Telegram
+                                            E-mail
                                             <span class="badge badge-secondary">Coming soon</span></span>
                                         </h5>
                                         <hr>
-                                        <p class="card-text">Send a confirmation token via your telegram bot for free.</p>
+                                        <p class="card-text">Send a confirmation token via E-mail.</p>
                                         <button class="btn btn-outline-dark" disabled>Connect</button>
                                     </div>
                                 </div>
@@ -41,11 +41,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title d-flex justify-content-between align-items-center">
-                                            E-mail
+                                            Telegram
                                             <span class="badge badge-secondary">Coming soon</span></span>
                                         </h5>
                                         <hr>
-                                        <p class="card-text">Send a confirmation token via E-mail.</p>
+                                        <p class="card-text">Send a confirmation token via your telegram bot for free.</p>
                                         <button class="btn btn-outline-dark" disabled>Connect</button>
                                     </div>
                                 </div>
