@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Interaction extends Model
+class Token extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'interactions';
+    protected $table = 'tokens';
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +22,7 @@ class Interaction extends Model
         'project_id',
         'recipient_id',
         'gateway_id',
-        'code',
+        'token',
         'status',
         'gateway_feedback',
     ];
@@ -38,7 +38,7 @@ class Interaction extends Model
     ];
 
     /**
-     * Get a recipient the Interaction has been sent to.
+     * Get a recipient the Token has been sent to.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -48,7 +48,7 @@ class Interaction extends Model
     }
 
     /**
-     * Get a gateway the Interaction has been sent via.
+     * Get a gateway the Token has been sent via.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

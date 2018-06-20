@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInteractionsTable extends Migration
+class CreateTokensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateInteractionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('interactions', function (Blueprint $table) {
+        Schema::create('tokens', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('project_id');
             $table->unsignedInteger('recipient_id');
             $table->unsignedInteger('gateway_id');
-            $table->string('code');
+            $table->string('token');
             $table->enum('status', ['QUEUED', 'SENT', 'FAILED'])->default('QUEUED');
             $table->string('gateway_feedback')->nullable();
             $table->timestamps();
@@ -47,6 +47,6 @@ class CreateInteractionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('interactions');
+        Schema::dropIfExists('tokens');
     }
 }
