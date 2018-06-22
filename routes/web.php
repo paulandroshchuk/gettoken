@@ -24,6 +24,7 @@ $router->middleware('auth')->group(function ($router) {
 
     // Gateways
     $router->get('/gateways', 'Gateways\GatewaysController@index')->name('gateways.index');
+    $router->post('/gateways', 'Gateways\GatewaysController@store')->name('gateways.store');
 
     // Webhooks
     $router->get('/webhooks', 'Webhooks\WebhooksController@index')->name('webhooks.index');
