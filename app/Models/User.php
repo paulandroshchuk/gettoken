@@ -35,12 +35,12 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get User's project.
+     * Get a list of Gateways associated to the User.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function project()
+    public function gateways()
     {
-        return $this->belongsTo(Project::class);
+        return $this->hasMany(Gateway::class);
     }
 }

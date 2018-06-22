@@ -15,7 +15,7 @@ class CreateTokensTable extends Migration
     {
         Schema::create('tokens', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('project_id');
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('recipient_id');
             $table->unsignedInteger('gateway_id');
             $table->string('token');
@@ -23,9 +23,9 @@ class CreateTokensTable extends Migration
             $table->string('gateway_feedback')->nullable();
             $table->timestamps();
 
-            $table->foreign('project_id')
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('projects')
+                ->on('users')
                 ->onDelete('CASCADE');
 
             $table->foreign('gateway_id')

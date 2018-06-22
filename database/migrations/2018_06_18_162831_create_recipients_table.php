@@ -15,17 +15,17 @@ class CreateRecipientsTable extends Migration
     {
         Schema::create('recipients', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('project_id');
+            $table->unsignedInteger('user_id');
             $table->enum('type', ['sms', 'email', 'telegram']);
             $table->string('address');
             $table->timestamps();
 
-            $table->foreign('project_id')
+            $table->foreign('user_id')
                 ->references('id')
-                ->on('projects')
+                ->on('users')
                 ->onDelete('CASCADE');
 
-            $table->unique(['project_id', 'type', 'address']);
+            $table->unique(['user_id', 'type', 'address']);
         });
     }
 
