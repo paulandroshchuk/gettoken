@@ -43,4 +43,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Gateway::class);
     }
+
+    /**
+     * Get a list of Recipients associated to the User.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function recipients()
+    {
+        return $this->hasMany(Recipient::class);
+    }
 }
