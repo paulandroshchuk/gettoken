@@ -42,7 +42,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title d-flex justify-content-between align-items-center">
                                             Telegram
-                                            <span class="badge badge-success">New</span></span>
+                                            <span class="badge badge-secondary">Coming soon</span></span>
                                         </h5>
                                         <hr>
                                         <p class="card-text">Send a confirmation token via your telegram bot for free.</p>
