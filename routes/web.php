@@ -19,15 +19,14 @@ $router->middleware('auth')->group(function ($router) {
     // Dashboard
     $router->get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
 
-    // Billing
-    $router->get('/billing', 'Billing\BillingController@index')->name('billing.index');
-
     // Gateways
     $router->get('/gateways', 'Gateways\GatewaysController@index')->name('gateways.index');
+    $router->view('/gateways/sms/create', 'gateways.sms.create')->name('gateways.sms.create');
     $router->post('/gateways', 'Gateways\GatewaysController@store')->name('gateways.store');
+    $router->delete('/gateways/{gateway}', 'Gateways\GatewaysController@destroy')->name('gateways.destroy');
 
     // Webhooks
-    $router->get('/webhooks', 'Webhooks\WebhooksController@index')->name('webhooks.index');
+//    $router->get('/webhooks', 'Webhooks\WebhooksController@index')->name('webhooks.index');
 
     // API
     $router->get('/api', 'Api\ApiController@index')->name('api.index');

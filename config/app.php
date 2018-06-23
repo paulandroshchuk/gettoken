@@ -108,6 +108,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'default_sms_address' => '+12185850143',
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

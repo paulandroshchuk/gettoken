@@ -24,9 +24,9 @@ class CreateGatewayRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => ['required', 'string', 'unique:gateways,name'],
-            'type'    => ['required', 'string', 'in:telegram'],
-            'address' => ['required', 'string'],
+            'name'    => ['required', 'alpha', 'min:3', 'max: 20', 'unique:gateways,name'],
+            'type'    => ['required', 'string', 'in:sms'],
+            'address' => ['required', 'string', 'in:+12185850143'],
         ];
     }
 }

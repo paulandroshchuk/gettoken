@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Gateways;
 
+use App\Actions\Gateways\Contracts\CreateGateway;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Gateways\CreateGatewayRequest;
+use App\Models\Gateway;
 
 class GatewaysController extends Controller
 {
@@ -20,13 +22,37 @@ class GatewaysController extends Controller
     }
 
     /**
+     * Create a Gateway.
+     *
      * @param CreateGatewayRequest $createGatewayRequest
+     * @param CreateGateway $createGatewayAction
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(CreateGatewayRequest $createGatewayRequest)
+    public function store(CreateGatewayRequest $createGatewayRequest, CreateGateway $createGatewayAction)
     {
-        $createGatewayRequest->user()->gateways()->create($createGatewayRequest->all());
+        $createGatewayAction->handle($createGatewayRequest->user(), $createGatewayRequest->validated());
 
-        return redirect()->back();
+        session()->flash('success', 'The gateway has been created.');
+
+        return redirect(route('gateways.index'));
+    }
+
+    /**
+     * Delete the Gateway.
+     *
+     * @param Gateway $gateway
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroy(Gateway $gateway)
+    {
+        $this->authorize('delete', $gateway);
+
+        $gateway->delete();
+
+        session()->flash('success', ' The gateway has been deleted.');
+
+        return redirect()
+            ->back();
     }
 }
