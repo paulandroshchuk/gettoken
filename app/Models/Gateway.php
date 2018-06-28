@@ -39,4 +39,27 @@ class Gateway extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Generate a token.
+     *
+     * @return string
+     */
+    public function generateToken()
+    {
+        return str_random(5);
+    }
+
+    /**
+     * Create & Send a token.
+     *
+     * @param array $data
+     * @return Token
+     */
+    public function send(array $data): Token
+    {
+        return app()
+            ->makeWith(sprintf('gateways.%s.send', $this->getAttribute('type')), [$this, $data])
+            ->handle();
+    }
 }
