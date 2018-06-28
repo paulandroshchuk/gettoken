@@ -36,9 +36,6 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('settings.index', function ($view) {
             $view->with('active', 'settings');
         });
-
-        $this->app->singleton(\App\Actions\Gateways\Contracts\CreateGateway::class,
-            \App\Actions\Gateways\Create::class);
     }
 
     /**
@@ -48,6 +45,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(\App\Actions\Gateways\Contracts\CreateGateway::class,
+            \App\Actions\Gateways\Create::class);
     }
 }
