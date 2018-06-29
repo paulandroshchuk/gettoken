@@ -24,7 +24,9 @@
                                         <dl class="row">
                                             @foreach($gateways as $gateway)
                                                 <dd class="col-sm-12">
-                                                    <a href="#"><b>{{ $gateway->name }}</b> {{ $gateway->address }}</a>
+                                                    <a href="javascript:void(0)">
+                                                        <b>{{ $gateway->name }}</b> {{ $gateway->address }}
+                                                    </a>
                                                 </dd>
                                             @endforeach
                                         </dl>
