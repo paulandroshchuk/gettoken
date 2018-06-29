@@ -2525,12 +2525,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/paulandroshchuk/transistor.git",
-                "reference": "93afd860e3921eb3621ffbde848fb5c7cc6b1837"
+                "reference": "aa44d805ae8910c7cd939dae1742b985a56fd24e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paulandroshchuk/transistor/zipball/93afd860e3921eb3621ffbde848fb5c7cc6b1837",
-                "reference": "93afd860e3921eb3621ffbde848fb5c7cc6b1837",
+                "url": "https://api.github.com/repos/paulandroshchuk/transistor/zipball/aa44d805ae8910c7cd939dae1742b985a56fd24e",
+                "reference": "aa44d805ae8910c7cd939dae1742b985a56fd24e",
                 "shasum": ""
             },
             "require": {
@@ -2563,7 +2563,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-06-23T16:26:37+00:00"
+            "time": "2018-06-29T12:15:02+00:00"
         }
     ],
     "packages-dev": [

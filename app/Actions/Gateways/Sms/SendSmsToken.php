@@ -5,7 +5,7 @@ namespace App\Actions\Gateways\Sms;
 use App\Models\Gateway;
 use App\Models\Recipient;
 use App\Models\Token;
-use Transistor;
+use Ypl\Transistor\Facades\Transistor;
 
 class SendSmsToken
 {
@@ -78,7 +78,7 @@ class SendSmsToken
         $response = Transistor::from('twilio', $this->gateway->address)->send($this->data['recipient'], $token->token);
 
         $token->gateway_feedback = $response->getId();
-//        $token->status = 'SENT';
+        $token->status = 'SENT';
         $token->save(); 
     }
 }
