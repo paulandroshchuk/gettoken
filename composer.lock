@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce14209bf9906f599bc70941d3cb9676",
+    "content-hash": "747e7c37bafbd937301308451c8ef63d",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2521,16 +2521,16 @@
         },
         {
             "name": "ypl/transistor",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paulandroshchuk/transistor.git",
-                "reference": "06e35e1b3985f6ea46ebcacf444a6360b612e47f"
+                "reference": "93afd860e3921eb3621ffbde848fb5c7cc6b1837"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paulandroshchuk/transistor/zipball/06e35e1b3985f6ea46ebcacf444a6360b612e47f",
-                "reference": "06e35e1b3985f6ea46ebcacf444a6360b612e47f",
+                "url": "https://api.github.com/repos/paulandroshchuk/transistor/zipball/93afd860e3921eb3621ffbde848fb5c7cc6b1837",
+                "reference": "93afd860e3921eb3621ffbde848fb5c7cc6b1837",
                 "shasum": ""
             },
             "require": {
@@ -2563,7 +2563,7 @@
             "license": [
                 "MIT"
             ],
-            "time": "2018-06-23T16:03:51+00:00"
+            "time": "2018-06-23T16:26:37+00:00"
         }
     ],
     "packages-dev": [
@@ -4262,7 +4262,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "ypl/transistor": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

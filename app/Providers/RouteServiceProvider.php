@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Gateway;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -23,7 +24,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::bind('tokenGateway', function ($value) {
+            return Gateway::where('name', $value)->first() ?? abort(404);
+        });
 
         parent::boot();
     }
