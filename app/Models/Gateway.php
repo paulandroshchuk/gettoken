@@ -59,7 +59,6 @@ class Gateway extends Model
     public function send(array $data): Token
     {
         return app()
-            ->makeWith(sprintf('gateways.%s.send', $this->getAttribute('type')), [$this, $data])
-            ->handle();
+            ->make(sprintf('gateways.%s.send', $this->getAttribute('type')))($this, $data);
     }
 }

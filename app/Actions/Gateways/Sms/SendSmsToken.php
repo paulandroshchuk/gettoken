@@ -5,7 +5,7 @@ namespace App\Actions\Gateways\Sms;
 use App\Models\Gateway;
 use App\Models\Recipient;
 use App\Models\Token;
-use Ypl\Transistor\Contracts\Transistor;
+use Transistor;
 
 class SendSmsToken
 {
@@ -28,12 +28,15 @@ class SendSmsToken
      * SendSmsToken constructor.
      * @param Gateway $gateway
      * @param array $data
+     * @return Token
      */
-    public function __construct(Gateway $gateway, array $data)
+    public function __invoke($gateway, array $data): Token
     {
         $this->gateway = $gateway;
         $this->data = $data;
         $this->user = $this->gateway->getRelationValue('user');
+
+        return $this->handle();
     }
 
     /**
@@ -50,10 +53,12 @@ class SendSmsToken
         $token->save();
 
         $this->send($token);
+
+        return $token;
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return Recipient
      */
     protected function getRecipient(): Recipient
     {
@@ -73,6 +78,7 @@ class SendSmsToken
         $response = Transistor::from('twilio', $this->gateway->address)->send($this->data['recipient'], $token->token);
 
         $token->gateway_feedback = $response->getId();
-        $token->save();
+//        $token->status = 'SENT';
+        $token->save(); 
     }
 }
