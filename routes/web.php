@@ -33,4 +33,5 @@ $router->middleware('auth')->group(function ($router) {
 
     // Settings
     $router->get('/settings', 'Settings\SettingsController@index')->name('settings.index');
+    $router->put('/settings/password', 'Settings\ChangePasswordController')->name('password.change');
 });

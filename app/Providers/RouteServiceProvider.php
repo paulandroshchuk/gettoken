@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Gateway;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Session;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -26,6 +28,12 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::bind('tokenGateway', function ($value) {
             return Gateway::where('name', $value)->first() ?? abort(404);
+        });
+
+        RedirectResponse::macro('withSuccess', function ($message) {
+            Session::flash('success', $message);
+
+            return $this;
         });
 
         parent::boot();

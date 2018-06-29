@@ -35,6 +35,18 @@ class User extends Authenticatable
     ];
 
     /**
+     * Change Password.
+     *
+     * @param string $password
+     * @return void
+     */
+    public function changePassword(string $password): void
+    {
+        $this->password = bcrypt($password);
+        $this->save();
+    }
+
+    /**
      * Get a list of Gateways associated to the User.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
