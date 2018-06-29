@@ -20,6 +20,7 @@ class CreateTokensTable extends Migration
             $table->string('token');
             $table->enum('status', ['QUEUED', 'SENT', 'FAILED'])->default('QUEUED');
             $table->string('gateway_feedback')->nullable();
+            $table->timestamp('used_at')->nullable();
             $table->timestamps();
 
             $table->foreign('gateway_id')
@@ -31,6 +32,8 @@ class CreateTokensTable extends Migration
                 ->references('id')
                 ->on('recipients')
                 ->onDelete('CASCADE');
+
+            $table->unique(['recipient_id', 'gateway_id', 'token']);
         });
     }
 
