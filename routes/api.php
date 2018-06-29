@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -12,3 +10,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+$router->middleware('auth:api')->group(function ($router) {
+    $router->post('/gateways/{tokenGateway}/tokens', 'Tokens\TokensController@store');
+});
