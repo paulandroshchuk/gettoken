@@ -31,4 +31,24 @@ class Recipient extends Model
         'type'    => 'string',
         'address' => 'string',
     ];
+
+    /**
+     * Get a list of Tokens have been sent to the Recipient.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tokens()
+    {
+        return $this->hasMany(Token::class);
+    }
+
+    /**
+     * @param $query
+     * @param Gateway $gateway
+     * @return mixed
+     */
+    public function scopeWhereGateway($query, $gateway)
+    {
+        return $query->where('type', $gateway->getAttribute('type'));
+    }
 }

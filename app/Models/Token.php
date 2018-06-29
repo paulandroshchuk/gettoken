@@ -19,12 +19,12 @@ class Token extends Model
      * @var array
      */
     protected $fillable = [
-        'project_id',
         'recipient_id',
         'gateway_id',
         'token',
         'status',
         'gateway_feedback',
+        'used_at',
     ];
 
     /**
@@ -34,7 +34,18 @@ class Token extends Model
      */
     protected $casts = [
         'type'    => 'string',
+        'status'  => 'string',
         'address' => 'string',
+        'gateway_feedback' => 'string',
+    ];
+
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'used_at',
     ];
 
     /**
@@ -55,5 +66,14 @@ class Token extends Model
     public function gateway()
     {
         return $this->belongsTo(Gateway::class);
+    }
+
+    /**
+     * Use the Token.
+     */
+    public function use(): void
+    {
+        $this->setAttribute('used_at', now());
+        $this->save();
     }
 }

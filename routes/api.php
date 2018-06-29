@@ -13,4 +13,5 @@
 
 $router->middleware('auth:api')->group(function ($router) {
     $router->post('/gateways/{tokenGateway}/tokens', 'Tokens\TokensController@store');
+    $router->post('/gateways/{tokenGateway}/tokens/{someToken}/verify', 'Tokens\TokensController@verify');
 });

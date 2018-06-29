@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Exceptions\InvalidTokenException;
 use App\Models\Gateway;
+use App\Models\Token;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -28,6 +30,16 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::bind('tokenGateway', function ($value) {
             return Gateway::where('name', $value)->first() ?? abort(404);
+        });
+
+        Route::bind('someToken', function ($value) {
+            $token = Token::where('token', $value)->first();
+
+            if ($token === null) {
+                throw new InvalidTokenException('The provided token is invalid.');
+            }
+
+            return $token;
         });
 
         RedirectResponse::macro('withSuccess', function ($message) {
