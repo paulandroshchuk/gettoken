@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Auth::viaRequest('api-token', function ($request) {
-            $token = str_after($request->headers->get('Authorization'), 'Token ');
+            $token = str_after($request->headers->get('Authorization'), 'Bearer ');
 
             return User::where('api_token', $token)->first();
         });
