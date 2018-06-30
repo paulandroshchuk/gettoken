@@ -12,11 +12,15 @@
                     Dashboard
                 </div>
                 <div class="card-body">
-                    body is here
+                    {!! $chartjs->render() !!}
                 </div>
             </div>
-
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 @endsection
