@@ -15,7 +15,7 @@
                                 <div class="alert alert-dark" role="alert">
                                     <i class="far fa-lightbulb"></i>
                                     Your rate limit is {{ $user->rate_limit }} requests/minute.
-                                    <a href="javascript:void(0)" class="alert-link">Learn more</a>.
+                                    <a href="https://documenter.getpostman.com/view/2088799/RWEfLeZ9#rate-limits" target="_blank" class="alert-link">Learn more</a>.
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
@@ -23,7 +23,8 @@
                                         <hr>
                                         <p class="card-text">
                                             Authentication is handled by using API tokens.
-                                            <br> You can find documentation of usage <a href="javascript:void(0)">here</a>.
+                                            <br> You can find documentation of usage
+                                            <a href="https://documenter.getpostman.com/view/2088799/RWEfLeZ9#authentication" target="_blank">here</a>.
                                         </p>
                                         <div class="form-group">
                                             <button class="btn btn-outline-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
